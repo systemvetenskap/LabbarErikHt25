@@ -14,6 +14,8 @@ namespace DrinkWater_lab
 
         private void OnButtonCalculateClick(object sender, RoutedEventArgs e)
         {
+            string formula = "H2OHO2H7";
+
 
         }
     }

@@ -36,7 +36,12 @@ namespace Yatzy_lab
 
         private void OnOkClick(object sender, RoutedEventArgs e)
         {
+            int fives = int.Parse(txtFives.Text);
+            // 5 10 15 20 25
+            if (fives % 5 == 0 && fives > 0 && fives <= 25)
+            {
 
+            }
         }
 
         private void OnClearClick(object sender, RoutedEventArgs e)
@@ -59,8 +64,8 @@ namespace Yatzy_lab
             _rollsLeft--;
             txtRollsLeft.Text = _rollsLeft.ToString();
 
-            bool[] savedDices = { 
-                (bool)chkDiceOne.IsChecked, 
+            bool[] savedDices = {
+                (bool)chkDiceOne.IsChecked,
                 (bool)chkDiceTwo.IsChecked ,
                 (bool)chkDiceThree.IsChecked,
                 (bool)chkDiceFour.IsChecked,
@@ -114,35 +119,43 @@ namespace Yatzy_lab
             txtOnes.Text = ones.ToString();
 
         }
-
-        private void OnTwosClick(object sender, RoutedEventArgs e)
+        private int CalculateScoreForCategory(int category)
         {
-
+            int score = 0;
+            //for (int i = 0; i < _dices.Length; i++)
+            //{
+            //    int dice = _dices[i];
+            //    if (dice == category)
+            //    {
+            //        score += category;
+            //    }
+            //} 
             foreach (int dice in _dices)
             {
-                if (dice == 2)
+                if (dice == category)
                 {
-                    _total += dice;
+                    score += dice;
+                    break;
                 }
+                txtBonus.Text = "asdflkasdj";
             }
-            txtTwos.Text = _total.ToString();
+            return score;
+        }
+        private void OnTwosClick(object sender, RoutedEventArgs e)
+        {
+            txtTwos.Text = CalculateScoreForCategory(2).ToString();
         }
 
         private void OnThreesClick(object sender, RoutedEventArgs e)
         {
-            foreach (int dice in _dices)
-            {
-                if (dice == 3)
-                {
-                    _total += dice;
-                }
-            }
-            txtTwos.Text = _total.ToString();
+            int score = CalculateScoreForCategory(3);
+            txtThrees.Text = score.ToString();
         }
 
         private void OnFoursClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Fyror klickade");
+            int score = CalculateScoreForCategory(4);
+            txtFours.Text = score.ToString();
         }
 
         private void OnFivesClick(object sender, RoutedEventArgs e)

@@ -14,6 +14,10 @@ namespace AgeCalculator_lab
 
         private void OnCalculateClick(object sender, RoutedEventArgs e)
         {
+            int currentYear = 97; // DateTime.Now.Year; // 2027
+
+            double year = (double)currentYear % 100;
+            
 
         }
     }

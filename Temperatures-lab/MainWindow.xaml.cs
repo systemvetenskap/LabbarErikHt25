@@ -78,15 +78,7 @@ namespace Temperatures_lab
 
             // Erik hade otur när han fyllde i sina yatzytärningar
             // lägsta värdet?
-            foreach (double temperature in temperatures)
-            {
-                // är temperaturen jag nu ser lägst?
-                if (temperature <= minTemp)
-                {
-                    // om sant. Ja den är just nu lägst
-                    minTemp = temperature;
-                }
-            }
+            
 
 
             // medelvärde
