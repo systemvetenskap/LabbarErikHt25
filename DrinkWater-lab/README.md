@@ -65,8 +65,8 @@ Du behöver fortfarande enbart räkna väteatomer (H).
 ### Exempel
 | Molekyl                | Antal  |
 |------------------------|--------|
-| H2O                    | 1      |
-| HH2                    | 2      |
+| H2O                    | 2      |
+| HH2                    | 3      |
 | H2OHO2H7               | 3      |
 | C6H12O6H2OC6H12O6      | 26     |
 
