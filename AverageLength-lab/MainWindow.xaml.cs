@@ -12,6 +12,12 @@ namespace AverageLength_lab
             InitializeComponent();
         }
 
+        private double CalculateAverageWordLength(string word)
+        {
+            return 0;
+        }
+
+
         private void OnValidateClick(object sender, RoutedEventArgs e)
         {
 
