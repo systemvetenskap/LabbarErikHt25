@@ -20,7 +20,9 @@ namespace AverageLength_lab
 
         private void OnValidateClick(object sender, RoutedEventArgs e)
         {
-
+            SentenceAnalyzer analyzer = new SentenceAnalyzer();
+            string message = analyzer.GetFeedback("Idag");
+            
         }
     }
 }
