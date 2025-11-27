@@ -12,30 +12,19 @@ namespace DrinkWater_lab
             InitializeComponent();
         }
 
-        private int CalculateHAtoms(string molekyl)
-        {
-            int numberOfH = 0;
-            char kontrollChar;
-            int molekylLength = molekyl.Length;
-            {
-                for (int i = 0; i < molekylLength; i++)
-                {
-                    kontrollChar = molekyl[i];
-                    if (kontrollChar == 'H' || kontrollChar == 'h')
-                    {
-                        numberOfH = numberOfH + 1;
-                    }
-                }
-                return numberOfH;
-            }
-        }
+        
 
 
         private void OnButtonCalculateClick(object sender, RoutedEventArgs e)
         {
+            WaterAnalyzer analyzer = new();
+
             string formula = "H221222O";
             formula = "H2O";
-            int count = CountOccurences(formula, 'H');
+            int count = analyzer.CountAtoms(formula, 'H');
+
+
+            //int count = CountOccurences(formula, 'H');
 
             if (ContainsValue(formula, 'C'))
             {

@@ -8,6 +8,7 @@ public class SentenceAnalyzer
     public int Words { get; private set; }
     public double AverageWordLength { get; private set; }
 
+
     public string GetFeedback(string sentence)
     {
         if (!IsLongEnough(sentence))
@@ -19,7 +20,7 @@ public class SentenceAnalyzer
         AverageWordLength = Letters / (double) Words;
         return "Det finns ingen text att analysera.";
     }
-    public bool IsLongEnough(string sentence)
+    private bool IsLongEnough(string sentence)
     {
         if (sentence.Length < 5)
         {
