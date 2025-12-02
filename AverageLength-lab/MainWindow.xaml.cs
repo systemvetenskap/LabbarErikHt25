@@ -7,6 +7,8 @@ namespace AverageLength_lab
     /// </summary>
     public partial class MainWindow : Window
     {
+        SentenceAnalyzer _analyzer = new SentenceAnalyzer();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -20,9 +22,12 @@ namespace AverageLength_lab
 
         private void OnValidateClick(object sender, RoutedEventArgs e)
         {
-            SentenceAnalyzer analyzer = new SentenceAnalyzer();
-            string message = analyzer.GetFeedback("Idag");
-            
+            string message = _analyzer.GetFeedback("Idag är det julfrukost");
+
+            if (_analyzer.IsAboveLimit)
+            {
+
+            }
         }
     }
 }
